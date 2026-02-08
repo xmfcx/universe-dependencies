@@ -1,0 +1,2055 @@
+{
+  "metadata": {
+    "total_packages": 254,
+    "total_dependencies": 633
+  },
+  "packages": [
+    {
+      "name": "autoware_universe_utils",
+      "dependent_count": 34,
+      "dependents": [
+        "autoware_behavior_path_avoidance_by_lane_change_module",
+        "autoware_behavior_path_bidirectional_traffic_module",
+        "autoware_behavior_path_dynamic_obstacle_avoidance_module",
+        "autoware_behavior_path_external_request_lane_change_module",
+        "autoware_behavior_path_goal_planner_module",
+        "autoware_behavior_path_lane_change_module",
+        "autoware_behavior_path_planner",
+        "autoware_behavior_path_planner_common",
+        "autoware_behavior_path_sampling_planner_module",
+        "autoware_behavior_path_side_shift_module",
+        "autoware_behavior_path_start_planner_module",
+        "autoware_behavior_path_static_obstacle_avoidance_module",
+        "autoware_bevfusion",
+        "autoware_boundary_departure_checker",
+        "autoware_command_mode_decider",
+        "autoware_command_mode_decider_plugins",
+        "autoware_control_evaluator",
+        "autoware_image_object_locator",
+        "autoware_lane_departure_checker",
+        "autoware_motion_velocity_boundary_departure_prevention_module",
+        "autoware_motion_velocity_road_user_stop_module",
+        "autoware_motion_velocity_run_out_module",
+        "autoware_pipeline_latency_monitor",
+        "autoware_radar_objects_adapter",
+        "autoware_surround_obstacle_checker",
+        "autoware_tracking_object_merger",
+        "autoware_trajectory_concatenator",
+        "autoware_trajectory_safety_filter",
+        "autoware_trajectory_traffic_rule_filter",
+        "tier4_control_launch",
+        "tier4_perception_launch",
+        "tier4_planning_launch",
+        "tier4_simulator_launch",
+        "tier4_system_launch"
+      ]
+    },
+    {
+      "name": "autoware_cuda_dependency_meta",
+      "dependent_count": 31,
+      "dependents": [
+        "autoware_bevfusion",
+        "autoware_bytetrack",
+        "autoware_calibration_status_classifier",
+        "autoware_camera_streampetr",
+        "autoware_cuda_pointcloud_preprocessor",
+        "autoware_cuda_utils",
+        "autoware_detected_object_validation",
+        "autoware_detection_by_tracker",
+        "autoware_diffusion_planner",
+        "autoware_dummy_perception_publisher",
+        "autoware_ground_segmentation_cuda",
+        "autoware_image_projection_based_fusion",
+        "autoware_lidar_apollo_instance_segmentation",
+        "autoware_lidar_centerpoint",
+        "autoware_lidar_frnet",
+        "autoware_lidar_transfusion",
+        "autoware_probabilistic_occupancy_grid_map",
+        "autoware_ptv3",
+        "autoware_raindrop_cluster_filter",
+        "autoware_shape_estimation",
+        "autoware_simpl_prediction",
+        "autoware_tensorrt_bevformer",
+        "autoware_tensorrt_classifier",
+        "autoware_tensorrt_common",
+        "autoware_tensorrt_plugins",
+        "autoware_tensorrt_vad",
+        "autoware_tensorrt_yolox",
+        "autoware_traffic_light_classifier",
+        "autoware_traffic_light_fine_detector",
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_cuda_utils",
+      "dependent_count": 27,
+      "dependents": [
+        "autoware_bevfusion",
+        "autoware_bytetrack",
+        "autoware_calibration_status_classifier",
+        "autoware_camera_streampetr",
+        "autoware_cuda_pointcloud_preprocessor",
+        "autoware_detected_object_validation",
+        "autoware_detection_by_tracker",
+        "autoware_diffusion_planner",
+        "autoware_dummy_perception_publisher",
+        "autoware_ground_segmentation_cuda",
+        "autoware_image_projection_based_fusion",
+        "autoware_lidar_apollo_instance_segmentation",
+        "autoware_lidar_centerpoint",
+        "autoware_lidar_frnet",
+        "autoware_probabilistic_occupancy_grid_map",
+        "autoware_ptv3",
+        "autoware_raindrop_cluster_filter",
+        "autoware_shape_estimation",
+        "autoware_simpl_prediction",
+        "autoware_tensorrt_classifier",
+        "autoware_tensorrt_plugins",
+        "autoware_tensorrt_vad",
+        "autoware_tensorrt_yolox",
+        "autoware_traffic_light_classifier",
+        "autoware_traffic_light_fine_detector",
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_traffic_light_utils",
+      "dependent_count": 23,
+      "dependents": [
+        "autoware_behavior_path_avoidance_by_lane_change_module",
+        "autoware_behavior_path_bidirectional_traffic_module",
+        "autoware_behavior_path_dynamic_obstacle_avoidance_module",
+        "autoware_behavior_path_external_request_lane_change_module",
+        "autoware_behavior_path_goal_planner_module",
+        "autoware_behavior_path_lane_change_module",
+        "autoware_behavior_path_planner",
+        "autoware_behavior_path_planner_common",
+        "autoware_behavior_path_sampling_planner_module",
+        "autoware_behavior_path_side_shift_module",
+        "autoware_behavior_path_start_planner_module",
+        "autoware_behavior_path_static_obstacle_avoidance_module",
+        "autoware_behavior_velocity_traffic_light_module",
+        "autoware_diffusion_planner",
+        "autoware_motion_velocity_out_of_lane_module",
+        "autoware_planning_validator_intersection_collision_checker",
+        "autoware_traffic_light_classifier",
+        "autoware_traffic_light_map_based_detector",
+        "autoware_traffic_light_occlusion_predictor",
+        "autoware_trajectory_traffic_rule_filter",
+        "tier4_perception_launch",
+        "tier4_planning_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_rtc_interface",
+      "dependent_count": 22,
+      "dependents": [
+        "autoware_behavior_path_avoidance_by_lane_change_module",
+        "autoware_behavior_path_bidirectional_traffic_module",
+        "autoware_behavior_path_dynamic_obstacle_avoidance_module",
+        "autoware_behavior_path_external_request_lane_change_module",
+        "autoware_behavior_path_goal_planner_module",
+        "autoware_behavior_path_lane_change_module",
+        "autoware_behavior_path_planner",
+        "autoware_behavior_path_planner_common",
+        "autoware_behavior_path_sampling_planner_module",
+        "autoware_behavior_path_side_shift_module",
+        "autoware_behavior_path_start_planner_module",
+        "autoware_behavior_path_static_obstacle_avoidance_module",
+        "autoware_behavior_velocity_blind_spot_module",
+        "autoware_behavior_velocity_crosswalk_module",
+        "autoware_behavior_velocity_detection_area_module",
+        "autoware_behavior_velocity_intersection_module",
+        "autoware_behavior_velocity_no_stopping_area_module",
+        "autoware_behavior_velocity_roundabout_module",
+        "autoware_behavior_velocity_rtc_interface",
+        "autoware_behavior_velocity_traffic_light_module",
+        "autoware_behavior_velocity_walkway_module",
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_tensorrt_common",
+      "dependent_count": 22,
+      "dependents": [
+        "autoware_bevfusion",
+        "autoware_bytetrack",
+        "autoware_calibration_status_classifier",
+        "autoware_camera_streampetr",
+        "autoware_detection_by_tracker",
+        "autoware_diffusion_planner",
+        "autoware_dummy_perception_publisher",
+        "autoware_image_projection_based_fusion",
+        "autoware_lidar_apollo_instance_segmentation",
+        "autoware_lidar_centerpoint",
+        "autoware_lidar_frnet",
+        "autoware_lidar_transfusion",
+        "autoware_ptv3",
+        "autoware_shape_estimation",
+        "autoware_simpl_prediction",
+        "autoware_tensorrt_classifier",
+        "autoware_tensorrt_vad",
+        "autoware_tensorrt_yolox",
+        "autoware_traffic_light_classifier",
+        "autoware_traffic_light_fine_detector",
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_auto_common",
+      "dependent_count": 20,
+      "dependents": [
+        "autoware_behavior_path_avoidance_by_lane_change_module",
+        "autoware_behavior_path_bidirectional_traffic_module",
+        "autoware_behavior_path_dynamic_obstacle_avoidance_module",
+        "autoware_behavior_path_external_request_lane_change_module",
+        "autoware_behavior_path_goal_planner_module",
+        "autoware_behavior_path_lane_change_module",
+        "autoware_behavior_path_planner",
+        "autoware_behavior_path_sampling_planner_module",
+        "autoware_behavior_path_side_shift_module",
+        "autoware_behavior_path_start_planner_module",
+        "autoware_behavior_path_static_obstacle_avoidance_module",
+        "autoware_fake_test_node",
+        "autoware_frenet_planner",
+        "autoware_path_optimizer",
+        "autoware_path_sampler",
+        "autoware_path_smoother",
+        "autoware_trajectory_follower_node",
+        "autoware_trajectory_optimizer",
+        "tier4_control_launch",
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_boundary_departure_checker",
+      "dependent_count": 19,
+      "dependents": [
+        "autoware_behavior_path_avoidance_by_lane_change_module",
+        "autoware_behavior_path_bidirectional_traffic_module",
+        "autoware_behavior_path_dynamic_obstacle_avoidance_module",
+        "autoware_behavior_path_external_request_lane_change_module",
+        "autoware_behavior_path_goal_planner_module",
+        "autoware_behavior_path_lane_change_module",
+        "autoware_behavior_path_planner",
+        "autoware_behavior_path_planner_common",
+        "autoware_behavior_path_sampling_planner_module",
+        "autoware_behavior_path_side_shift_module",
+        "autoware_behavior_path_start_planner_module",
+        "autoware_behavior_path_static_obstacle_avoidance_module",
+        "autoware_control_evaluator",
+        "autoware_lane_departure_checker",
+        "autoware_motion_velocity_boundary_departure_prevention_module",
+        "autoware_trajectory_safety_filter",
+        "autoware_trajectory_traffic_rule_filter",
+        "tier4_control_launch",
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_fake_test_node",
+      "dependent_count": 18,
+      "dependents": [
+        "autoware_behavior_path_avoidance_by_lane_change_module",
+        "autoware_behavior_path_bidirectional_traffic_module",
+        "autoware_behavior_path_dynamic_obstacle_avoidance_module",
+        "autoware_behavior_path_external_request_lane_change_module",
+        "autoware_behavior_path_goal_planner_module",
+        "autoware_behavior_path_lane_change_module",
+        "autoware_behavior_path_planner",
+        "autoware_behavior_path_sampling_planner_module",
+        "autoware_behavior_path_side_shift_module",
+        "autoware_behavior_path_start_planner_module",
+        "autoware_behavior_path_static_obstacle_avoidance_module",
+        "autoware_path_optimizer",
+        "autoware_path_sampler",
+        "autoware_path_smoother",
+        "autoware_trajectory_follower_node",
+        "autoware_trajectory_optimizer",
+        "tier4_control_launch",
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_component_interface_utils",
+      "dependent_count": 15,
+      "dependents": [
+        "autoware_automatic_pose_initializer",
+        "autoware_control_command_gate",
+        "autoware_default_adapi_universe",
+        "autoware_geo_pose_projector",
+        "autoware_operation_mode_transition_manager",
+        "autoware_predicted_path_checker",
+        "autoware_smart_mpc_trajectory_follower",
+        "autoware_stop_mode_operator",
+        "autoware_vehicle_cmd_gate",
+        "tier4_adapi_rviz_plugin",
+        "tier4_autoware_api_launch",
+        "tier4_camera_view_rviz_plugin",
+        "tier4_control_launch",
+        "tier4_localization_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_sampler_common",
+      "dependent_count": 15,
+      "dependents": [
+        "autoware_behavior_path_avoidance_by_lane_change_module",
+        "autoware_behavior_path_bidirectional_traffic_module",
+        "autoware_behavior_path_dynamic_obstacle_avoidance_module",
+        "autoware_behavior_path_external_request_lane_change_module",
+        "autoware_behavior_path_goal_planner_module",
+        "autoware_behavior_path_lane_change_module",
+        "autoware_behavior_path_planner",
+        "autoware_behavior_path_sampling_planner_module",
+        "autoware_behavior_path_side_shift_module",
+        "autoware_behavior_path_start_planner_module",
+        "autoware_behavior_path_static_obstacle_avoidance_module",
+        "autoware_bezier_sampler",
+        "autoware_frenet_planner",
+        "autoware_path_sampler",
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_freespace_planning_algorithms",
+      "dependent_count": 14,
+      "dependents": [
+        "autoware_behavior_path_avoidance_by_lane_change_module",
+        "autoware_behavior_path_bidirectional_traffic_module",
+        "autoware_behavior_path_dynamic_obstacle_avoidance_module",
+        "autoware_behavior_path_external_request_lane_change_module",
+        "autoware_behavior_path_goal_planner_module",
+        "autoware_behavior_path_lane_change_module",
+        "autoware_behavior_path_planner",
+        "autoware_behavior_path_planner_common",
+        "autoware_behavior_path_sampling_planner_module",
+        "autoware_behavior_path_side_shift_module",
+        "autoware_behavior_path_start_planner_module",
+        "autoware_behavior_path_static_obstacle_avoidance_module",
+        "autoware_freespace_planner",
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_bezier_sampler",
+      "dependent_count": 13,
+      "dependents": [
+        "autoware_behavior_path_avoidance_by_lane_change_module",
+        "autoware_behavior_path_bidirectional_traffic_module",
+        "autoware_behavior_path_dynamic_obstacle_avoidance_module",
+        "autoware_behavior_path_external_request_lane_change_module",
+        "autoware_behavior_path_goal_planner_module",
+        "autoware_behavior_path_lane_change_module",
+        "autoware_behavior_path_planner",
+        "autoware_behavior_path_sampling_planner_module",
+        "autoware_behavior_path_side_shift_module",
+        "autoware_behavior_path_start_planner_module",
+        "autoware_behavior_path_static_obstacle_avoidance_module",
+        "autoware_path_sampler",
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_frenet_planner",
+      "dependent_count": 13,
+      "dependents": [
+        "autoware_behavior_path_avoidance_by_lane_change_module",
+        "autoware_behavior_path_bidirectional_traffic_module",
+        "autoware_behavior_path_dynamic_obstacle_avoidance_module",
+        "autoware_behavior_path_external_request_lane_change_module",
+        "autoware_behavior_path_goal_planner_module",
+        "autoware_behavior_path_lane_change_module",
+        "autoware_behavior_path_planner",
+        "autoware_behavior_path_sampling_planner_module",
+        "autoware_behavior_path_side_shift_module",
+        "autoware_behavior_path_start_planner_module",
+        "autoware_behavior_path_static_obstacle_avoidance_module",
+        "autoware_path_sampler",
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_pcl_extensions",
+      "dependent_count": 13,
+      "dependents": [
+        "autoware_compare_map_segmentation",
+        "autoware_cuda_pointcloud_preprocessor",
+        "autoware_detected_object_validation",
+        "autoware_ground_segmentation",
+        "autoware_ground_segmentation_cuda",
+        "autoware_image_projection_based_fusion",
+        "autoware_occupancy_grid_map_outlier_filter",
+        "autoware_pointcloud_preprocessor",
+        "autoware_probabilistic_occupancy_grid_map",
+        "autoware_raindrop_cluster_filter",
+        "tier4_localization_launch",
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_behavior_path_planner_common",
+      "dependent_count": 12,
+      "dependents": [
+        "autoware_behavior_path_avoidance_by_lane_change_module",
+        "autoware_behavior_path_bidirectional_traffic_module",
+        "autoware_behavior_path_dynamic_obstacle_avoidance_module",
+        "autoware_behavior_path_external_request_lane_change_module",
+        "autoware_behavior_path_goal_planner_module",
+        "autoware_behavior_path_lane_change_module",
+        "autoware_behavior_path_planner",
+        "autoware_behavior_path_sampling_planner_module",
+        "autoware_behavior_path_side_shift_module",
+        "autoware_behavior_path_start_planner_module",
+        "autoware_behavior_path_static_obstacle_avoidance_module",
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_component_interface_specs_universe",
+      "dependent_count": 12,
+      "dependents": [
+        "autoware_control_command_gate",
+        "autoware_default_adapi_universe",
+        "autoware_geo_pose_projector",
+        "autoware_operation_mode_transition_manager",
+        "autoware_predicted_path_checker",
+        "autoware_smart_mpc_trajectory_follower",
+        "autoware_stop_mode_operator",
+        "autoware_vehicle_cmd_gate",
+        "tier4_autoware_api_launch",
+        "tier4_control_launch",
+        "tier4_localization_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_path_sampler",
+      "dependent_count": 12,
+      "dependents": [
+        "autoware_behavior_path_avoidance_by_lane_change_module",
+        "autoware_behavior_path_bidirectional_traffic_module",
+        "autoware_behavior_path_dynamic_obstacle_avoidance_module",
+        "autoware_behavior_path_external_request_lane_change_module",
+        "autoware_behavior_path_goal_planner_module",
+        "autoware_behavior_path_lane_change_module",
+        "autoware_behavior_path_planner",
+        "autoware_behavior_path_sampling_planner_module",
+        "autoware_behavior_path_side_shift_module",
+        "autoware_behavior_path_start_planner_module",
+        "autoware_behavior_path_static_obstacle_avoidance_module",
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_pointcloud_preprocessor",
+      "dependent_count": 12,
+      "dependents": [
+        "autoware_compare_map_segmentation",
+        "autoware_cuda_pointcloud_preprocessor",
+        "autoware_detected_object_validation",
+        "autoware_ground_segmentation",
+        "autoware_ground_segmentation_cuda",
+        "autoware_image_projection_based_fusion",
+        "autoware_occupancy_grid_map_outlier_filter",
+        "autoware_probabilistic_occupancy_grid_map",
+        "autoware_raindrop_cluster_filter",
+        "tier4_localization_launch",
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_behavior_path_planner",
+      "dependent_count": 10,
+      "dependents": [
+        "autoware_behavior_path_avoidance_by_lane_change_module",
+        "autoware_behavior_path_bidirectional_traffic_module",
+        "autoware_behavior_path_dynamic_obstacle_avoidance_module",
+        "autoware_behavior_path_external_request_lane_change_module",
+        "autoware_behavior_path_goal_planner_module",
+        "autoware_behavior_path_lane_change_module",
+        "autoware_behavior_path_side_shift_module",
+        "autoware_behavior_path_start_planner_module",
+        "autoware_behavior_path_static_obstacle_avoidance_module",
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_grid_map_utils",
+      "dependent_count": 9,
+      "dependents": [
+        "autoware_behavior_velocity_crosswalk_module",
+        "autoware_behavior_velocity_occlusion_spot_module",
+        "autoware_behavior_velocity_walkway_module",
+        "autoware_costmap_generator",
+        "autoware_elevation_map_loader",
+        "autoware_motion_velocity_obstacle_velocity_limiter_module",
+        "tier4_perception_launch",
+        "tier4_planning_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_behavior_velocity_rtc_interface",
+      "dependent_count": 8,
+      "dependents": [
+        "autoware_behavior_velocity_blind_spot_module",
+        "autoware_behavior_velocity_crosswalk_module",
+        "autoware_behavior_velocity_detection_area_module",
+        "autoware_behavior_velocity_intersection_module",
+        "autoware_behavior_velocity_no_stopping_area_module",
+        "autoware_behavior_velocity_roundabout_module",
+        "autoware_behavior_velocity_traffic_light_module",
+        "autoware_behavior_velocity_walkway_module"
+      ]
+    },
+    {
+      "name": "autoware_planning_validator_test_utils",
+      "dependent_count": 8,
+      "dependents": [
+        "autoware_pipeline_latency_monitor",
+        "autoware_planning_validator",
+        "autoware_planning_validator_intersection_collision_checker",
+        "autoware_planning_validator_latency_checker",
+        "autoware_planning_validator_rear_collision_checker",
+        "autoware_planning_validator_trajectory_checker",
+        "tier4_planning_launch",
+        "tier4_system_launch"
+      ]
+    },
+    {
+      "name": "tier4_api_utils",
+      "dependent_count": 8,
+      "dependents": [
+        "autoware_control_command_gate",
+        "autoware_joy_controller",
+        "autoware_simple_planning_simulator",
+        "autoware_smart_mpc_trajectory_follower",
+        "autoware_stop_mode_operator",
+        "autoware_vehicle_cmd_gate",
+        "tier4_control_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_command_mode_types",
+      "dependent_count": 7,
+      "dependents": [
+        "autoware_command_mode_decider",
+        "autoware_command_mode_decider_plugins",
+        "autoware_command_mode_switcher",
+        "autoware_command_mode_switcher_plugins",
+        "autoware_control_command_gate",
+        "tier4_control_launch",
+        "tier4_system_launch"
+      ]
+    },
+    {
+      "name": "autoware_planning_validator",
+      "dependent_count": 7,
+      "dependents": [
+        "autoware_pipeline_latency_monitor",
+        "autoware_planning_validator_intersection_collision_checker",
+        "autoware_planning_validator_latency_checker",
+        "autoware_planning_validator_rear_collision_checker",
+        "autoware_planning_validator_trajectory_checker",
+        "tier4_planning_launch",
+        "tier4_system_launch"
+      ]
+    },
+    {
+      "name": "autoware_image_transport_decompressor",
+      "dependent_count": 6,
+      "dependents": [
+        "autoware_bevfusion",
+        "autoware_calibration_status_classifier",
+        "autoware_tensorrt_yolox",
+        "autoware_traffic_light_fine_detector",
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_tensorrt_plugins",
+      "dependent_count": 6,
+      "dependents": [
+        "autoware_bevfusion",
+        "autoware_diffusion_planner",
+        "autoware_ptv3",
+        "autoware_tensorrt_vad",
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "perception_utils",
+      "dependent_count": 6,
+      "dependents": [
+        "autoware_image_projection_based_fusion",
+        "autoware_tensorrt_yolox",
+        "autoware_traffic_light_fine_detector",
+        "autoware_traffic_light_occlusion_predictor",
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_trajectory_follower_base",
+      "dependent_count": 5,
+      "dependents": [
+        "autoware_mpc_lateral_controller",
+        "autoware_pid_longitudinal_controller",
+        "autoware_pure_pursuit",
+        "autoware_trajectory_follower_node",
+        "tier4_control_launch"
+      ]
+    },
+    {
+      "name": "yabloc_common",
+      "dependent_count": 5,
+      "dependents": [
+        "tier4_localization_launch",
+        "tier4_simulator_launch",
+        "yabloc_image_processing",
+        "yabloc_particle_filter",
+        "yabloc_pose_initializer"
+      ]
+    },
+    {
+      "name": "autoware_euclidean_cluster",
+      "dependent_count": 4,
+      "dependents": [
+        "autoware_detection_by_tracker",
+        "autoware_image_projection_based_fusion",
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_landmark_manager",
+      "dependent_count": 4,
+      "dependents": [
+        "autoware_ar_tag_based_localizer",
+        "autoware_lidar_marker_localizer",
+        "tier4_localization_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_probabilistic_occupancy_grid_map",
+      "dependent_count": 4,
+      "dependents": [
+        "autoware_detected_object_validation",
+        "autoware_raindrop_cluster_filter",
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_raw_vehicle_cmd_converter",
+      "dependent_count": 4,
+      "dependents": [
+        "autoware_accel_brake_map_calibrator",
+        "autoware_external_cmd_converter",
+        "tier4_control_launch",
+        "tier4_vehicle_launch"
+      ]
+    },
+    {
+      "name": "autoware_shape_estimation",
+      "dependent_count": 4,
+      "dependents": [
+        "autoware_detection_by_tracker",
+        "autoware_dummy_perception_publisher",
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_vehicle_cmd_gate",
+      "dependent_count": 4,
+      "dependents": [
+        "autoware_control_command_gate",
+        "autoware_smart_mpc_trajectory_follower",
+        "autoware_stop_mode_operator",
+        "tier4_control_launch"
+      ]
+    },
+    {
+      "name": "autoware_detected_object_feature_remover",
+      "dependent_count": 3,
+      "dependents": [
+        "autoware_dummy_perception_publisher",
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_detected_object_validation",
+      "dependent_count": 3,
+      "dependents": [
+        "autoware_raindrop_cluster_filter",
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_lidar_centerpoint",
+      "dependent_count": 3,
+      "dependents": [
+        "autoware_image_projection_based_fusion",
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_tensorrt_classifier",
+      "dependent_count": 3,
+      "dependents": [
+        "autoware_traffic_light_classifier",
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_tensorrt_yolox",
+      "dependent_count": 3,
+      "dependents": [
+        "autoware_traffic_light_fine_detector",
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_agnocast_wrapper",
+      "dependent_count": 2,
+      "dependents": [
+        "autoware_cuda_pointcloud_preprocessor",
+        "autoware_ground_segmentation_cuda"
+      ]
+    },
+    {
+      "name": "autoware_ar_tag_based_localizer",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_localization_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_automatic_pose_initializer",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_localization_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_behavior_path_lane_change_module",
+      "dependent_count": 2,
+      "dependents": [
+        "autoware_behavior_path_avoidance_by_lane_change_module",
+        "autoware_behavior_path_external_request_lane_change_module"
+      ]
+    },
+    {
+      "name": "autoware_bevfusion",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_bytetrack",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_cluster_merger",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_command_mode_decider",
+      "dependent_count": 2,
+      "dependents": [
+        "autoware_command_mode_decider_plugins",
+        "tier4_system_launch"
+      ]
+    },
+    {
+      "name": "autoware_command_mode_switcher",
+      "dependent_count": 2,
+      "dependents": [
+        "autoware_command_mode_switcher_plugins",
+        "tier4_system_launch"
+      ]
+    },
+    {
+      "name": "autoware_compare_map_segmentation",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_crosswalk_traffic_light_estimator",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_detection_by_tracker",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_diagnostic_graph_aggregator",
+      "dependent_count": 2,
+      "dependents": [
+        "autoware_diagnostic_graph_test_examples",
+        "tier4_system_launch"
+      ]
+    },
+    {
+      "name": "autoware_diagnostic_graph_utils",
+      "dependent_count": 2,
+      "dependents": [
+        "autoware_hazard_status_converter",
+        "tier4_system_launch"
+      ]
+    },
+    {
+      "name": "autoware_elevation_map_loader",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_external_cmd_selector",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_control_launch",
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_geo_pose_projector",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_localization_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_ground_segmentation",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_image_object_locator",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_image_projection_based_fusion",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_learning_based_vehicle_model",
+      "dependent_count": 2,
+      "dependents": [
+        "autoware_simple_planning_simulator",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_lidar_apollo_instance_segmentation",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_lidar_marker_localizer",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_localization_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_lidar_transfusion",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_localization_error_monitor",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_localization_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_map_based_prediction",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_mission_planner_universe",
+      "dependent_count": 2,
+      "dependents": [
+        "autoware_manual_lane_change_handler",
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_mpc_lateral_controller",
+      "dependent_count": 2,
+      "dependents": [
+        "autoware_trajectory_follower_node",
+        "tier4_control_launch"
+      ]
+    },
+    {
+      "name": "autoware_multi_object_tracker",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_object_merger",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_object_range_splitter",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_object_sorter",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_object_velocity_splitter",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_occupancy_grid_map_outlier_filter",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_path_optimizer",
+      "dependent_count": 2,
+      "dependents": [
+        "autoware_trajectory_optimizer",
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_perception_online_evaluator",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_pid_longitudinal_controller",
+      "dependent_count": 2,
+      "dependents": [
+        "autoware_trajectory_follower_node",
+        "tier4_control_launch"
+      ]
+    },
+    {
+      "name": "autoware_pose_covariance_modifier",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_localization_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_pose_estimator_arbiter",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_localization_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_pose_instability_detector",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_localization_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_pure_pursuit",
+      "dependent_count": 2,
+      "dependents": [
+        "autoware_trajectory_follower_node",
+        "tier4_control_launch"
+      ]
+    },
+    {
+      "name": "autoware_radar_fusion_to_detected_object",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_radar_object_tracker",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_raindrop_cluster_filter",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_simpl_prediction",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_simple_object_merger",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_tensorrt_bevdet",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_topic_state_monitor",
+      "dependent_count": 2,
+      "dependents": [
+        "autoware_component_state_monitor",
+        "tier4_system_launch"
+      ]
+    },
+    {
+      "name": "autoware_tracking_object_merger",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_traffic_light_arbiter",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_traffic_light_classifier",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_traffic_light_fine_detector",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_traffic_light_map_based_detector",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_traffic_light_multi_camera_fusion",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_traffic_light_occlusion_predictor",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_traffic_light_visualization",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_perception_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "yabloc_image_processing",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_localization_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "yabloc_monitor",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_localization_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "yabloc_particle_filter",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_localization_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "yabloc_pose_initializer",
+      "dependent_count": 2,
+      "dependents": [
+        "tier4_localization_launch",
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_behavior_path_static_obstacle_avoidance_module",
+      "dependent_count": 1,
+      "dependents": [
+        "autoware_behavior_path_avoidance_by_lane_change_module"
+      ]
+    },
+    {
+      "name": "autoware_behavior_velocity_crosswalk_module",
+      "dependent_count": 1,
+      "dependents": [
+        "autoware_behavior_velocity_walkway_module"
+      ]
+    },
+    {
+      "name": "autoware_behavior_velocity_intersection_module",
+      "dependent_count": 1,
+      "dependents": [
+        "autoware_behavior_velocity_roundabout_module"
+      ]
+    },
+    {
+      "name": "autoware_component_interface_tools",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_system_launch"
+      ]
+    },
+    {
+      "name": "autoware_component_state_monitor",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_system_launch"
+      ]
+    },
+    {
+      "name": "autoware_control_command_gate",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_control_launch"
+      ]
+    },
+    {
+      "name": "autoware_control_evaluator",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_control_launch"
+      ]
+    },
+    {
+      "name": "autoware_costmap_generator",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_cuda_pointcloud_preprocessor",
+      "dependent_count": 1,
+      "dependents": [
+        "autoware_ground_segmentation_cuda"
+      ]
+    },
+    {
+      "name": "autoware_default_adapi_universe",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_autoware_api_launch"
+      ]
+    },
+    {
+      "name": "autoware_dummy_diag_publisher",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_system_launch"
+      ]
+    },
+    {
+      "name": "autoware_dummy_perception_publisher",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_duplicated_node_checker",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_system_launch"
+      ]
+    },
+    {
+      "name": "autoware_evaluation_adapter",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_autoware_api_launch"
+      ]
+    },
+    {
+      "name": "autoware_external_cmd_converter",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_control_launch"
+      ]
+    },
+    {
+      "name": "autoware_external_velocity_limit_selector",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_fault_injection",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_freespace_planner",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_glog_component",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_hazard_lights_selector",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_hazard_status_converter",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_system_launch"
+      ]
+    },
+    {
+      "name": "autoware_lane_departure_checker",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_control_launch"
+      ]
+    },
+    {
+      "name": "autoware_manual_lane_change_handler",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_map_tf_generator",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_map_launch"
+      ]
+    },
+    {
+      "name": "autoware_mrm_comfortable_stop_operator",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_system_launch"
+      ]
+    },
+    {
+      "name": "autoware_mrm_emergency_stop_operator",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_system_launch"
+      ]
+    },
+    {
+      "name": "autoware_mrm_handler",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_system_launch"
+      ]
+    },
+    {
+      "name": "autoware_path_smoother",
+      "dependent_count": 1,
+      "dependents": [
+        "autoware_trajectory_optimizer"
+      ]
+    },
+    {
+      "name": "autoware_pipeline_latency_monitor",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_system_launch"
+      ]
+    },
+    {
+      "name": "autoware_planning_evaluator",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_processing_time_checker",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_system_launch"
+      ]
+    },
+    {
+      "name": "autoware_remaining_distance_time_calculator",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_scenario_selector",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_shift_decider",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_control_launch"
+      ]
+    },
+    {
+      "name": "autoware_simple_planning_simulator",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_stop_mode_operator",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_control_launch"
+      ]
+    },
+    {
+      "name": "autoware_surround_obstacle_checker",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_planning_launch"
+      ]
+    },
+    {
+      "name": "autoware_system_monitor",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_system_launch"
+      ]
+    },
+    {
+      "name": "autoware_trajectory_follower_node",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_control_launch"
+      ]
+    },
+    {
+      "name": "autoware_vehicle_door_simulator",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "tier4_localization_launch",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "tier4_perception_launch",
+      "dependent_count": 1,
+      "dependents": [
+        "tier4_simulator_launch"
+      ]
+    },
+    {
+      "name": "autoware_accel_brake_map_calibrator",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_adapi_visualizers",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_autonomous_emergency_braking",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_bag_time_manager_rviz_plugin",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_behavior_path_avoidance_by_lane_change_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_behavior_path_bidirectional_traffic_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_behavior_path_dynamic_obstacle_avoidance_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_behavior_path_external_request_lane_change_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_behavior_path_goal_planner_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_behavior_path_sampling_planner_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_behavior_path_side_shift_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_behavior_path_start_planner_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_behavior_velocity_blind_spot_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_behavior_velocity_detection_area_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_behavior_velocity_no_drivable_lane_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_behavior_velocity_no_stopping_area_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_behavior_velocity_occlusion_spot_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_behavior_velocity_roundabout_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_behavior_velocity_speed_bump_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_behavior_velocity_template_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_behavior_velocity_traffic_light_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_behavior_velocity_virtual_traffic_light_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_behavior_velocity_walkway_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_bluetooth_monitor",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_calibration_status_classifier",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_camera_streampetr",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_carla_interface",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_collision_detector",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_command_mode_decider_plugins",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_command_mode_switcher_plugins",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_component_monitor",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_control_performance_analysis",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_control_validator",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_diagnostic_graph_test_examples",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_diffusion_planner",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_dummy_infrastructure",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_goal_distance_calculator",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_ground_segmentation_cuda",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_image_diagnostics",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_imu_corrector",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_joy_controller",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_kinematic_evaluator",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_lidar_frnet",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_livox_tag_filter",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_localization_evaluator",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_motion_velocity_boundary_departure_prevention_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_motion_velocity_dynamic_obstacle_stop_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_motion_velocity_obstacle_cruise_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_motion_velocity_obstacle_slow_down_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_motion_velocity_obstacle_velocity_limiter_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_motion_velocity_out_of_lane_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_motion_velocity_road_user_stop_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_motion_velocity_run_out_module",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_obstacle_collision_checker",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_operation_mode_transition_manager",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_path_distance_calculator",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_planning_validator_intersection_collision_checker",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_planning_validator_latency_checker",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_planning_validator_rear_collision_checker",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_planning_validator_trajectory_checker",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_polar_grid",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_pose2twist",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_predicted_path_checker",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_predicted_path_postprocessor",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_ptv3",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_radar_objects_adapter",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_radar_scan_to_pointcloud2",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_radar_static_pointcloud_filter",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_radar_threshold_filter",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_radar_tracks_msgs_converter",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_radar_tracks_noise_filter",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_scenario_simulator_v2_adapter",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_smart_mpc_trajectory_follower",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_spheric_collision_detector",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_steer_offset_estimator",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_tensorrt_bevformer",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_tensorrt_vad",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_time_utils",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_topic_relay_controller",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_traffic_light_category_merger",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_traffic_light_recognition_marker_publisher",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_traffic_light_rviz_plugin",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_traffic_light_selector",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_trajectory_adapter",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_trajectory_concatenator",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_trajectory_modifier",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_trajectory_optimizer",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_trajectory_ranker",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_trajectory_safety_filter",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_trajectory_traffic_rule_filter",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "autoware_velodyne_monitor",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "tier4_adapi_rviz_plugin",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "tier4_autoware_api_launch",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "tier4_camera_view_rviz_plugin",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "tier4_control_launch",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "tier4_control_mode_rviz_plugin",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "tier4_datetime_rviz_plugin",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "tier4_dummy_object_rviz_plugin",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "tier4_manual_lane_change_rviz_plugin",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "tier4_map_launch",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "tier4_perception_rviz_plugin",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "tier4_planning_factor_rviz_plugin",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "tier4_planning_launch",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "tier4_sensing_launch",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "tier4_simulator_launch",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "tier4_state_rviz_plugin",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "tier4_system_launch",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "tier4_traffic_light_rviz_plugin",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "tier4_vehicle_launch",
+      "dependent_count": 0,
+      "dependents": []
+    },
+    {
+      "name": "tier4_vehicle_rviz_plugin",
+      "dependent_count": 0,
+      "dependents": []
+    }
+  ]
+}

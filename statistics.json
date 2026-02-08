@@ -1,0 +1,54 @@
+{
+  "total_packages": 254,
+  "total_dependency_edges": 633,
+  "leaf_packages": 110,
+  "max_dependents": 34,
+  "min_dependents": 0,
+  "mean_dependents": 2.4921259842519685,
+  "median_dependents": 1,
+  "percentile_90": 7,
+  "percentile_95": 13,
+  "percentile_99": 27,
+  "top_10_packages": [
+    {
+      "name": "autoware_universe_utils",
+      "dependent_count": 34
+    },
+    {
+      "name": "autoware_cuda_dependency_meta",
+      "dependent_count": 31
+    },
+    {
+      "name": "autoware_cuda_utils",
+      "dependent_count": 27
+    },
+    {
+      "name": "autoware_traffic_light_utils",
+      "dependent_count": 23
+    },
+    {
+      "name": "autoware_rtc_interface",
+      "dependent_count": 22
+    },
+    {
+      "name": "autoware_tensorrt_common",
+      "dependent_count": 22
+    },
+    {
+      "name": "autoware_auto_common",
+      "dependent_count": 20
+    },
+    {
+      "name": "autoware_boundary_departure_checker",
+      "dependent_count": 19
+    },
+    {
+      "name": "autoware_fake_test_node",
+      "dependent_count": 18
+    },
+    {
+      "name": "autoware_component_interface_utils",
+      "dependent_count": 15
+    }
+  ]
+}
