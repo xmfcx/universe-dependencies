@@ -1,54 +1,18 @@
 {
-  "total_packages": 243,
-  "total_dependency_edges": 408,
-  "leaf_packages": 183,
+  "total_packages": 241,
+  "total_direct_dependency_edges": 232,
+  "leaf_packages": 179,
   "max_dependents": 29,
   "min_dependents": 0,
-  "mean_dependents": 1.6790123456790123,
+  "mean_dependents": 1.6182572614107884,
   "median_dependents": 0,
   "percentile_90": 5,
   "percentile_95": 12,
   "percentile_99": 25,
-  "top_10_packages": [
-    {
-      "name": "autoware_cuda_dependency_meta",
-      "dependent_count": 29
-    },
-    {
-      "name": "autoware_universe_utils",
-      "dependent_count": 29
-    },
-    {
-      "name": "autoware_cuda_utils",
-      "dependent_count": 25
-    },
-    {
-      "name": "autoware_rtc_interface",
-      "dependent_count": 21
-    },
-    {
-      "name": "autoware_tensorrt_common",
-      "dependent_count": 20
-    },
-    {
-      "name": "autoware_traffic_light_utils",
-      "dependent_count": 20
-    },
-    {
-      "name": "autoware_auto_common",
-      "dependent_count": 18
-    },
-    {
-      "name": "autoware_boundary_departure_checker",
-      "dependent_count": 17
-    },
-    {
-      "name": "autoware_fake_test_node",
-      "dependent_count": 16
-    },
-    {
-      "name": "autoware_sampler_common",
-      "dependent_count": 14
-    }
-  ]
+  "candidate_status_counts": {
+    "eligible": 70,
+    "review": 17,
+    "blocked_external": 154
+  },
+  "standalone_eligible": 31
 }
