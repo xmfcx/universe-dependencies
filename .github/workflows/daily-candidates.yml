@@ -38,14 +38,26 @@ jobs:
 
       - name: Import current Autoware source
         run: |
-          cat > autoware/repositories/index-analysis.repos <<'EOF'
-          extends:
-            - autoware.repos
-            - autoware-nightly.repos
-          repositories: {}
-          EOF
+          python - <<'PY'
+          from pathlib import Path
+          import yaml
+
+          directory = Path("autoware/repositories")
+          repositories = {}
+          for name in ("autoware.repos", "autoware-nightly.repos"):
+              repositories.update(yaml.safe_load((directory / name).read_text())["repositories"])
+          for required in ("universe/autoware_universe", "launcher/autoware_launch"):
+              if required not in repositories:
+                  raise SystemExit(f"Missing repository: {required}")
+          (directory / "index-analysis.repos").write_text(
+              yaml.safe_dump({"repositories": repositories}, sort_keys=False)
+          )
+          print(f"Importing {len(repositories)} repositories")
+          PY
           vcs import --shallow --retry 3 --workers 8 \
             --input autoware/repositories/index-analysis.repos autoware/src
+          test -f autoware/src/universe/autoware_universe/README.md
+          test -d autoware/src/launcher/autoware_launch
 
       - name: Generate candidate ranking
         run: python generate_index_candidates.py --workspace autoware --output results/index_candidates.csv
