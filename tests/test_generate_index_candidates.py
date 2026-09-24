@@ -56,11 +56,11 @@ class GeneratorFixtureTests(unittest.TestCase):
         self.assertNotIn("free", paths)
         self.assertNotIn("review_target", paths)
         self.assertEqual(by_name["free"]["Score"], 92)  # One internal dependent.
-        self.assertEqual(by_name["leaf_with_prereq"]["Score"], 97)
+        self.assertEqual(by_name["leaf_with_prereq"]["Score"], 80)
         self.assertEqual(by_name["review_target"]["Tier"], "review")
         self.assertEqual(by_name["manifest_target"]["Tier"], "used_by_launch")
-        self.assertLess(by_name["leaf_with_prereq"]["Rank"], by_name["free"]["Rank"])
-        self.assertLess(by_name["free"]["Rank"], by_name["review_target"]["Rank"])
+        self.assertLess(by_name["free"]["Rank"], by_name["leaf_with_prereq"]["Rank"])
+        self.assertLess(by_name["leaf_with_prereq"]["Rank"], by_name["review_target"]["Rank"])
         self.assertLess(by_name["review_target"]["Rank"], by_name["manifest_target"]["Rank"])
 
         output = self.workspace / "index_candidates.csv"
@@ -72,6 +72,25 @@ class GeneratorFixtureTests(unittest.TestCase):
         self.assertEqual(len(exported), 8)
         self.assertEqual(exported[0]["Rank"], "1")
         self.assertEqual(exported[-1]["Tier"], "used_by_launch")
+
+    def test_only_universe_prerequisites_lower_dependency_score(self):
+        self.package(self.workspace / "src/core/core_helper", "core_helper")
+        self.package(self.universe / "non_universe_deps", "non_universe_deps", ("core_helper", "rosdep_key"))
+        self.package(self.universe / "universe_base", "universe_base")
+        self.package(self.universe / "universe_consumer", "universe_consumer", ("universe_base",))
+
+        result = analyzer.analyze(self.workspace, generator.DEFAULT_UNIVERSE)
+        by_name = {row["Package"]: row for row in generator.rank_candidates(result, {})}
+
+        self.assertEqual(by_name["non_universe_deps"]["Score"], 100)
+        self.assertEqual(by_name["non_universe_deps"]["Internal_Prerequisite_Count"], 0)
+        self.assertEqual(by_name["universe_consumer"]["Score"], 80)
+        self.assertEqual(by_name["universe_consumer"]["Internal_Prerequisites"], "universe_base")
+        self.assertLess(by_name["non_universe_deps"]["Rank"], by_name["universe_consumer"]["Rank"])
+        self.assertTrue(all(
+            row["Internal_Prerequisite_Count"] == 0
+            for row in by_name.values() if row["Score"] > 80
+        ))
 
 
 if __name__ == "__main__":

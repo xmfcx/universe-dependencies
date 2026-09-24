@@ -90,13 +90,16 @@ the launch closure. `review` means only lower-confidence external mentions
 were found. `used_elsewhere` means active use outside launch was found.
 `used_by_launch` is last regardless of its other references. Each tier gets
 its own score range: 71–100, 41–70, 11–40, and 1–10 respectively. Within a
-tier, the score loses 8 points per recursive Universe dependent and 3 per
-direct Universe prerequisite, capped at the tier's lower bound. Ties use
-fewer dependents, fewer prerequisites, then package name. A `ready` package
-with no known users or Universe prerequisites scores 100. The score is a
-triage aid, not a build or registration guarantee. Dynamic package names,
-packages outside the workspace, and skipped files can leave references
-undetected.
+tier, the score loses 8 points per recursive Universe dependent, 20 points
+for the first direct Universe prerequisite, and 3 for each additional one,
+capped at the tier's lower bound. A score above 80 therefore has no known
+Universe prerequisites. Ties use fewer dependents, fewer prerequisites, then
+package name. A `ready` package with no known users or Universe prerequisites
+scores 100. Core and other non-Universe manifest dependencies do not lower the
+score. The generator does not verify that unresolved dependency keys are
+available through rosdep. The score is a triage aid, not a build or
+registration guarantee. Dynamic package names, packages outside the workspace,
+and skipped files can leave references undetected.
 
 ## Daily report and Pages site
 

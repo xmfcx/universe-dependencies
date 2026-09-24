@@ -59,9 +59,18 @@ def launch_paths(result, launch_path):
     return paths
 
 
+def candidate_score(tier, dependents, prerequisites):
+    """Reserve scores above 80 for packages without Universe prerequisites."""
+    bases = {"ready": 100, "review": 70, "used_elsewhere": 40, "used_by_launch": 10}
+    # A package needing another Universe package is less ready to move on
+    # its own, even when nothing currently uses it.
+    universe_penalty = 20 + 3 * (prerequisites - 1) if prerequisites else 0
+    penalty = 8 * dependents + universe_penalty
+    return bases[tier] - min(9 if tier == "used_by_launch" else 29, penalty)
+
+
 def rank_candidates(result, paths):
     """Give each package a score in a separate band for each eligibility tier."""
-    bases = {"ready": 100, "review": 70, "used_elsewhere": 40, "used_by_launch": 10}
     records = []
     for item in result["candidates"]:
         name = item["name"]
@@ -75,8 +84,7 @@ def rank_candidates(result, paths):
             tier = "used_elsewhere"
         dependents = len(item["internal_recursive_dependents"])
         prerequisites = len(item["internal_prerequisites"])
-        penalty = 8 * dependents + 3 * prerequisites
-        score = bases[tier] - min(9 if tier == "used_by_launch" else 29, penalty)
+        score = candidate_score(tier, dependents, prerequisites)
         records.append({
             "Package": name,
             "Score": score,

@@ -50,7 +50,18 @@ function render() {
       details.append(summary, path);
       evidence.append(details);
     } else if (item.Tier === "ready") {
-      evidence.textContent = item.Standalone ? "No known users or Universe prerequisites" : "No known external use";
+      if (item.Internal_Prerequisite_Count) {
+        const details = document.createElement("details");
+        const summary = document.createElement("summary");
+        summary.textContent = "View Universe prerequisites";
+        const names = document.createElement("span");
+        names.className = "path";
+        names.textContent = item.Internal_Prerequisites.split(";").join(", ");
+        details.append(summary, names);
+        evidence.append(details);
+      } else {
+        evidence.textContent = item.Standalone ? "No known users or Universe prerequisites" : "No known external use";
+      }
     } else if (item.Tier === "review") {
       evidence.textContent = `${item.External_Review_Reference_Count} lower-confidence mention(s)`;
     } else {

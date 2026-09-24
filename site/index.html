@@ -53,7 +53,7 @@
         <div class="table-scroll">
           <table>
             <thead>
-              <tr><th scope="col">Rank</th><th scope="col">Package</th><th scope="col">Score</th><th scope="col">Status</th><th scope="col">Universe users</th><th scope="col">Prerequisites</th><th scope="col">Evidence</th></tr>
+              <tr><th scope="col">Rank</th><th scope="col">Package</th><th scope="col">Score</th><th scope="col">Status</th><th scope="col">Universe users</th><th scope="col">Universe prerequisites</th><th scope="col">Evidence</th></tr>
             </thead>
             <tbody id="candidate-rows"></tbody>
           </table>
@@ -64,7 +64,7 @@
     </main>
 
     <footer>
-      <p>The score separates ready packages from review and known usage, then favors fewer Universe users and prerequisites. A score of 100 means no known users or Universe prerequisites. Literal scanning can miss dynamic references; inspect a package before moving it.</p>
+      <p>The score separates ready packages from review and known usage, then favors fewer Universe users and prerequisites. Scores above 80 have no known Universe prerequisites; 100 also means no known users. Rosdep availability is not verified. Inspect a package before moving it.</p>
       <p id="source-links"></p>
     </footer>
   </div>
