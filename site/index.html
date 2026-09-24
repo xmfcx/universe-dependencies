@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Daily ranking of Autoware Universe packages for possible Autoware Index registration.">
+  <title>Universe candidates · Autoware Index</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="masthead">
+      <div class="identity"><span class="identity-mark" aria-hidden="true">U</span><span>Universe candidates</span></div>
+      <nav aria-label="Site links">
+        <a href="candidates.csv" download>Download CSV</a>
+        <a href="https://github.com/xmfcx/universe-dependencies/tree/data">Data history</a>
+        <a href="https://github.com/xmfcx/universe-dependencies">Method and source</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <h1 id="page-title">Find the packages ready to stand alone.</h1>
+          <p>Universe packages ranked for possible registration in Autoware Index. Packages used by <code>autoware_launch</code>, directly or through another package, sit at the end of the list.</p>
+        </div>
+        <div class="freshness">
+          <span class="freshness-label">Latest analysis</span>
+          <strong id="generated-at">Loading…</strong>
+          <span id="source-revision"></span>
+        </div>
+      </section>
+
+      <section class="results" aria-labelledby="results-title">
+        <div class="section-heading">
+          <div>
+            <h2 id="results-title">Candidate ranking</h2>
+            <p id="result-count" role="status">Loading package data…</p>
+          </div>
+          <label class="search-box">
+            <span>Find a package</span>
+            <input id="search" type="search" placeholder="Search package names" autocomplete="off">
+          </label>
+        </div>
+        <div class="filters" role="group" aria-label="Filter by candidate status">
+          <button type="button" class="active" data-tier="all" aria-pressed="true">All <span id="count-all"></span></button>
+          <button type="button" data-tier="ready" aria-pressed="false">Ready <span id="count-ready"></span></button>
+          <button type="button" data-tier="review" aria-pressed="false">Review <span id="count-review"></span></button>
+          <button type="button" data-tier="used_elsewhere" aria-pressed="false">Used elsewhere <span id="count-used_elsewhere"></span></button>
+          <button type="button" data-tier="used_by_launch" aria-pressed="false">Used by launch <span id="count-used_by_launch"></span></button>
+        </div>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr><th scope="col">Rank</th><th scope="col">Package</th><th scope="col">Score</th><th scope="col">Status</th><th scope="col">Universe users</th><th scope="col">Prerequisites</th><th scope="col">Evidence</th></tr>
+            </thead>
+            <tbody id="candidate-rows"></tbody>
+          </table>
+        </div>
+        <p id="empty-state" hidden>No packages match this filter. Try another status or search term.</p>
+        <noscript><p>Enable JavaScript to browse the ranking, or download the CSV above.</p></noscript>
+      </section>
+    </main>
+
+    <footer>
+      <p>The score separates ready packages from review and known usage, then favors fewer Universe users and prerequisites. A score of 100 means no known users or Universe prerequisites. Literal scanning can miss dynamic references; inspect a package before moving it.</p>
+      <p id="source-links"></p>
+    </footer>
+  </div>
+</body>
+</html>

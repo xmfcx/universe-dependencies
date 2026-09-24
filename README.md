@@ -65,5 +65,67 @@ Run the fixture tests with:
 python3 -m unittest discover -s tests -v
 ```
 
+## Index candidate ranking
+
+Generate a ranked CSV for Autoware Index from a checked-out workspace:
+
+```bash
+python3 generate_index_candidates.py \
+  --workspace /path/to/autoware \
+  --output results/index_candidates.csv
+```
+
+The generator re-runs the workspace analysis, then starts at every package
+under `src/launcher/autoware_launch`. It follows manifest dependencies and
+strong literal package references in active files through all discovered
+workspace packages. It also includes strong references in unowned files under
+the launch tree. `Launch_Path` shows one shortest known path for each reachable
+Universe package. Use `--launch-path` and `--universe-path` if the checkout has
+different locations. Active YAML under the launch tree, including `.github`
+configuration, counts as a reference.
+
+The CSV contains every Universe package, ranked best to worst. `ready` means
+no external manifest or active-file usage was found and the package is outside
+the launch closure. `review` means only lower-confidence external mentions
+were found. `used_elsewhere` means active use outside launch was found.
+`used_by_launch` is last regardless of its other references. Each tier gets
+its own score range: 71–100, 41–70, 11–40, and 1–10 respectively. Within a
+tier, the score loses 8 points per recursive Universe dependent and 3 per
+direct Universe prerequisite, capped at the tier's lower bound. Ties use
+fewer dependents, fewer prerequisites, then package name. A `ready` package
+with no known users or Universe prerequisites scores 100. The score is a
+triage aid, not a build or registration guarantee. Dynamic package names,
+packages outside the workspace, and skipped files can leave references
+undetected.
+
+## Daily report and Pages site
+
+The [daily workflow](.github/workflows/daily-candidates.yml) runs at 03:17 UTC,
+on pushes to `main`, and on manual dispatch. It checks out the Autoware meta
+repository, imports `autoware.repos` with the overrides in
+`autoware-nightly.repos`, runs the candidate generator, and builds a static
+browser. The workflow writes `candidates.csv` and `metadata.json` to the
+separate `data` branch, then deploys the same snapshot to GitHub Pages. The
+metadata records the run time and the exact Autoware, Universe, and launch
+commits used. No ROS build is needed.
+
+For the first deployment, set **Settings → Pages → Build and deployment →
+Source** to **GitHub Actions**. The workflow creates the `data` branch on its
+first successful run. It needs the repository's `GITHUB_TOKEN` to have
+`contents: write` for that branch and Pages deployment enabled for the
+repository. Scheduled workflows can be disabled by GitHub after 60 days of
+repository inactivity; run the workflow manually or re-enable its schedule if
+that happens.
+
+To preview the site locally after generating the CSV:
+
+```bash
+python3 build_site.py --csv results/index_candidates.csv --output-dir public
+python3 -m http.server --directory public 8000
+```
+
+Open `http://localhost:8000/`. The published site offers status filters,
+package search, launch paths, source revision links, and a CSV download.
+
 The [earlier analysis document](https://drive.google.com/file/d/1kSYKON-CYDl9wPkpwuQOxSXPhbQegUiK/view?usp=sharing)
 is retained for comparison.

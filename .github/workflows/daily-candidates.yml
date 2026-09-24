@@ -1,0 +1,87 @@
+name: Daily Universe candidates
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+concurrency:
+  group: daily-universe-candidates
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    permissions:
+      contents: write
+      pages: read
+    steps:
+      - name: Check out analysis repository
+        uses: actions/checkout@v6
+
+      - name: Check out Autoware manifest
+        uses: actions/checkout@v6
+        with:
+          repository: autowarefoundation/autoware
+          path: autoware
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install workspace importer
+        run: python -m pip install vcs2l==1.1.7
+
+      - name: Import current Autoware source
+        run: |
+          cat > autoware/repositories/index-analysis.repos <<'EOF'
+          extends:
+            - autoware.repos
+            - autoware-nightly.repos
+          repositories: {}
+          EOF
+          vcs import --shallow --retry 3 --workers 8 \
+            --input autoware/repositories/index-analysis.repos autoware/src
+
+      - name: Generate candidate ranking
+        run: python generate_index_candidates.py --workspace autoware --output results/index_candidates.csv
+
+      - name: Build Pages snapshot
+        run: |
+          python build_site.py \
+            --csv results/index_candidates.csv \
+            --output-dir public \
+            --autoware-commit "$(git -C autoware rev-parse HEAD)" \
+            --universe-commit "$(git -C autoware/src/universe/autoware_universe rev-parse HEAD)" \
+            --launch-commit "$(git -C autoware/src/launcher/autoware_launch rev-parse HEAD)"
+
+      - name: Update data branch
+        run: bash scripts/publish_data.sh public "${{ runner.temp }}/universe-candidate-data"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: public
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
