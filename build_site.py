@@ -14,12 +14,14 @@ TIERS = {"ready", "review", "used_elsewhere", "used_by_launch"}
 NUMERIC_FIELDS = {
     "Rank", "Score", "Internal_Recursive_Dependent_Count",
     "Internal_Direct_Dependent_Count", "Internal_Prerequisite_Count",
+    "Tier4_Message_Penalty",
     "External_Manifest_Dependent_Count", "External_High_Reference_Count",
     "External_Review_Reference_Count",
 }
 BOOLEAN_FIELDS = {"Launch_Reachable", "Standalone"}
 REQUIRED_FIELDS = NUMERIC_FIELDS | BOOLEAN_FIELDS | {
-    "Package", "Tier", "Launch_Path", "Internal_Prerequisites", "Source_Path"
+    "Package", "Tier", "Launch_Path", "Internal_Prerequisites", "Source_Path",
+    "Tier4_Message_Dependencies",
 }
 
 

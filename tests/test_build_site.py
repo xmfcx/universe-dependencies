@@ -18,6 +18,7 @@ class BuildSiteTests(unittest.TestCase):
         fields = ["Rank", "Package", "Score", "Tier", "Launch_Reachable", "Launch_Path",
                   "Standalone", "Internal_Recursive_Dependent_Count", "Internal_Direct_Dependent_Count",
                   "Internal_Prerequisite_Count", "Internal_Prerequisites",
+                  "Tier4_Message_Dependencies", "Tier4_Message_Penalty",
                   "External_Manifest_Dependent_Count", "External_High_Reference_Count",
                   "External_Review_Reference_Count", "Source_Path"]
         with self.csv_path.open("w", newline="") as file:
@@ -28,6 +29,7 @@ class BuildSiteTests(unittest.TestCase):
                 "Launch_Reachable": "False", "Standalone": "True",
                 "Internal_Recursive_Dependent_Count": 0, "Internal_Direct_Dependent_Count": 0,
                 "Internal_Prerequisite_Count": 0, "External_Manifest_Dependent_Count": 0,
+                "Tier4_Message_Penalty": 0,
                 "External_High_Reference_Count": 0, "External_Review_Reference_Count": 0,
                 "Source_Path": "src/universe/autoware_universe/free",
             })
@@ -45,6 +47,27 @@ class BuildSiteTests(unittest.TestCase):
         self.assertEqual((output / "candidates.csv").read_bytes(), self.csv_path.read_bytes())
         for name in ("index.html", "style.css", "app.js"):
             self.assertTrue((output / name).is_file())
+
+    def test_preserves_tier4_dependencies_and_numeric_penalty_in_snapshot(self):
+        with self.csv_path.open(newline="") as file:
+            row = next(csv.DictReader(file))
+        with self.csv_path.open("a", newline="") as file:
+            writer = csv.DictWriter(file, fieldnames=list(row))
+            writer.writerow(row | {
+                "Rank": 2, "Package": "tier4_consumer", "Score": 95,
+                "Tier4_Message_Dependencies": "tier4_debug_msgs;tier4_planning_msgs",
+                "Tier4_Message_Penalty": 5,
+                "Source_Path": "src/universe/autoware_universe/tier4_consumer",
+            })
+
+        output = self.root / "public"
+        build_site.build(self.csv_path, output, {})
+        rows = json.loads((output / "data.json").read_text())["candidates"]
+        self.assertEqual(rows[0]["Tier4_Message_Penalty"], 0)
+        self.assertEqual(rows[0]["Tier4_Message_Dependencies"], "")
+        self.assertEqual(rows[1]["Score"], 95)
+        self.assertEqual(rows[1]["Tier4_Message_Penalty"], 5)
+        self.assertEqual(rows[1]["Tier4_Message_Dependencies"], "tier4_debug_msgs;tier4_planning_msgs")
 
     def test_rejects_wrong_rank(self):
         text = self.csv_path.read_text().replace("1,free,", "2,free,")

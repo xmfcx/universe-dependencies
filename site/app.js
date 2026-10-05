@@ -67,6 +67,19 @@ function render() {
     } else {
       evidence.textContent = `${item.External_Manifest_Dependent_Count} manifest user(s), ${item.External_High_Reference_Count} active reference(s)`;
     }
+    if (item.Tier4_Message_Dependencies) {
+      const details = document.createElement("details");
+      const summary = document.createElement("summary");
+      const penalty = item.Tier4_Message_Penalty;
+      summary.textContent = penalty
+        ? `Tier 4 messages (−${penalty} point${penalty === 1 ? "" : "s"})`
+        : "Tier 4 messages (tier minimum reached)";
+      const names = document.createElement("span");
+      names.className = "path";
+      names.textContent = item.Tier4_Message_Dependencies.split(";").join(", ");
+      details.append(summary, names);
+      evidence.append(details);
+    }
     fragment.append(tr);
   }
   tbody.replaceChildren(fragment);

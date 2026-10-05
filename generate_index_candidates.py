@@ -12,6 +12,8 @@ import analyze_package_dependencies as analyzer
 
 DEFAULT_UNIVERSE = Path("src/universe/autoware_universe")
 DEFAULT_LAUNCH = Path("src/launcher/autoware_launch")
+DEFAULT_TIER4_MSGS = Path("src/universe/external/tier4_autoware_msgs")
+TIER4_MESSAGE_PENALTY = 5
 
 
 def launch_paths(result, launch_path):
@@ -59,18 +61,27 @@ def launch_paths(result, launch_path):
     return paths
 
 
-def candidate_score(tier, dependents, prerequisites):
+def candidate_score(tier, dependents, prerequisites, has_tier4_messages=False):
     """Reserve scores above 80 for packages without Universe prerequisites."""
     bases = {"ready": 100, "review": 70, "used_elsewhere": 40, "used_by_launch": 10}
     # A package needing another Universe package is less ready to move on
     # its own, even when nothing currently uses it.
     universe_penalty = 20 + 3 * (prerequisites - 1) if prerequisites else 0
     penalty = 8 * dependents + universe_penalty
+    if has_tier4_messages:
+        penalty += TIER4_MESSAGE_PENALTY
     return bases[tier] - min(9 if tier == "used_by_launch" else 29, penalty)
 
 
-def rank_candidates(result, paths):
+def rank_candidates(result, paths, tier4_msgs_path=DEFAULT_TIER4_MSGS):
     """Give each package a score in a separate band for each eligibility tier."""
+    tier4_root = (result["workspace"] / tier4_msgs_path).resolve()
+    if not tier4_root.is_relative_to(result["workspace"]):
+        raise ValueError(f"Tier 4 messages path must be inside workspace: {tier4_root}")
+    tier4_packages = {
+        name for name, info in result["packages"].items()
+        if info["path"].is_relative_to(tier4_root)
+    }
     records = []
     for item in result["candidates"]:
         name = item["name"]
@@ -84,7 +95,9 @@ def rank_candidates(result, paths):
             tier = "used_elsewhere"
         dependents = len(item["internal_recursive_dependents"])
         prerequisites = len(item["internal_prerequisites"])
-        score = candidate_score(tier, dependents, prerequisites)
+        tier4_dependencies = sorted(tier4_packages & result["packages"][name]["dependencies"].keys())
+        score_without_messages = candidate_score(tier, dependents, prerequisites)
+        score = candidate_score(tier, dependents, prerequisites, bool(tier4_dependencies))
         records.append({
             "Package": name,
             "Score": score,
@@ -96,6 +109,8 @@ def rank_candidates(result, paths):
             "Internal_Direct_Dependent_Count": len(item["internal_direct_dependents"]),
             "Internal_Prerequisite_Count": prerequisites,
             "Internal_Prerequisites": ";".join(item["internal_prerequisites"]),
+            "Tier4_Message_Dependencies": ";".join(tier4_dependencies),
+            "Tier4_Message_Penalty": score_without_messages - score,
             "External_Manifest_Dependent_Count": len(item["external_manifest_dependents"]),
             "External_High_Reference_Count": sum(
                 ref["confidence"] == "high" for ref in item["external_references"]
@@ -119,12 +134,14 @@ def main(argv=None):
     parser.add_argument("--workspace", type=Path, required=True, help="Autoware workspace root")
     parser.add_argument("--universe-path", type=Path, default=DEFAULT_UNIVERSE)
     parser.add_argument("--launch-path", type=Path, default=DEFAULT_LAUNCH)
+    parser.add_argument("--tier4-msgs-path", type=Path, default=DEFAULT_TIER4_MSGS,
+                        help="tier4_autoware_msgs checkout path inside the workspace")
     parser.add_argument("--output", type=Path, default=Path("results/index_candidates.csv"))
     args = parser.parse_args(argv)
     try:
         result = analyzer.analyze(args.workspace, args.universe_path)
         paths = launch_paths(result, args.launch_path)
-        records = rank_candidates(result, paths)
+        records = rank_candidates(result, paths, args.tier4_msgs_path)
         args.output.parent.mkdir(parents=True, exist_ok=True)
         with args.output.open("w", newline="", encoding="utf-8") as file:
             writer = csv.DictWriter(file, fieldnames=["Rank", *(key for key in records[0] if key != "Rank")],

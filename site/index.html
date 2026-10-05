@@ -64,7 +64,7 @@
     </main>
 
     <footer>
-      <p>The score separates ready packages from review and known usage, then favors fewer Universe users and prerequisites. Scores above 80 have no known Universe prerequisites; 100 also means no known users. Rosdep availability is not verified. Inspect a package before moving it.</p>
+      <p>The score separates ready packages from review and known usage, then favors fewer Universe users and prerequisites. Direct dependencies on packages in the checked-out <code>tier4_autoware_msgs</code> repository subtract 5 points once per candidate, capped at the tier's minimum score. Scores above 80 have no known Universe prerequisites; 100 also means no known users or detected Tier 4 message dependencies. Rosdep availability is not verified. Inspect a package before moving it.</p>
       <p id="source-links"></p>
     </footer>
   </div>
