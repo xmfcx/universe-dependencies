@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-10-14T08:45:34+00:00",
+  "generated_at": "2026-10-15T08:20:30+00:00",
   "total_packages": 252,
   "tier_counts": {
-    "ready": 54,
+    "ready": 52,
     "review": 13,
-    "used_by_launch": 185
+    "used_by_launch": 187
   },
   "commits": {
     "autoware": "9d18e03756f7e86af97cd87a8d7182d82f93a5bb",
-    "universe": "4fb338fa764670c1b4bce1cd8c0aed1633644a74",
-    "launch": "359c6685e3c0d09f5b021b78a08af6aeac5180d1"
+    "universe": "7cdb582240d5d1dba81d49d43cbec850003133b3",
+    "launch": "4824f75c1b7614b6ec4edcd5a36b4665f680fd8c"
   }
 }
