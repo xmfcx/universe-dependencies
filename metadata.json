@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T10:58:22+00:00",
+  "generated_at": "2026-11-06T10:55:18+00:00",
   "total_packages": 244,
   "tier_counts": {
     "ready": 46,
@@ -8,7 +8,7 @@
   },
   "commits": {
     "autoware": "148a178057d6423f9cab456f604122515c6405f7",
-    "universe": "6811ec77f2509d315c616fe19f9fc1739ec4a191",
-    "launch": "9610748adcefbeeb5b222025c84c75b56f0f5a75"
+    "universe": "f6e57723675053777a617e5f088c23c846e7c4ad",
+    "launch": "364d37efd54aeb0b9edb05caecaf33161a0ea1e6"
   }
 }
